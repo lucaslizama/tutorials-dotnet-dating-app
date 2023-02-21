@@ -7,13 +7,11 @@ import { ToastrService } from 'ngx-toastr';
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
     @Output() cancelRegister = new EventEmitter();
     model: any = {};
 
     constructor(private accountService: AccountService, private toastr: ToastrService) {}
-
-    ngOnInit(): void {}
 
     public register() {
         this.accountService.register(this.model).subscribe({
